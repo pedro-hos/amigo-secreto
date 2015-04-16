@@ -1,7 +1,6 @@
 package br.com.amigo.secreto.model.entities;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
@@ -22,9 +21,6 @@ public class DefaultEntity implements Serializable {
 	@Column(nullable = false)
 	private boolean ativo = true;
 
-	@Column(name = "data_criacao", nullable = false)
-	private LocalDateTime dataCriacao = LocalDateTime.now();
-
 	public Long getId() {
 		return id;
 	}
@@ -33,20 +29,12 @@ public class DefaultEntity implements Serializable {
 		return ativo;
 	}
 
-	public LocalDateTime getDataCriacao() {
-		return dataCriacao;
-	}
-
 	public void setId(Long id) {
 		this.id = id;
 	}
 
 	public void setAtivo(boolean ativo) {
 		this.ativo = ativo;
-	}
-
-	public void setDataCriacao(LocalDateTime dataCriacao) {
-		this.dataCriacao = dataCriacao;
 	}
 
 }
