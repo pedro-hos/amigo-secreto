@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 import br.com.amigo.secreto.model.entities.usuario.Usuario;
 
 @Repository
-public interface Usuarios extends CrudRepository<Usuario, Long> { }
+public interface UsuarioRepository extends CrudRepository<Usuario, Long> {
+	Usuario findByEmailLike(String email); 
+}
