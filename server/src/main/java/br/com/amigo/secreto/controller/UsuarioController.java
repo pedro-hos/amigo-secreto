@@ -73,10 +73,13 @@ public class UsuarioController {
 	
 		if(!usuario.getId().equals(id)) {
 			return new ResponseEntity<Usuario>(BAD_REQUEST);
+			
 		} else if(usuarios.comID(id) == null) {
 			return new ResponseEntity<Usuario>(NOT_FOUND);
+			
 		} else if(usuarios.comEmail(usuario.getEmail()) != null) {
 			return new ResponseEntity<Usuario>(CONFLICT);
+			
 		}
 		
 		return new ResponseEntity<Usuario>(usuarios.novo(usuario), OK);

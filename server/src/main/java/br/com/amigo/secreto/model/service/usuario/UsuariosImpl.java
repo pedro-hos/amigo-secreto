@@ -38,4 +38,9 @@ public class UsuariosImpl implements Usuarios {
 		usuarioRepository.delete(id);;
 	}
 
+	@Override
+	public void removeAll() {
+		usuarioRepository.deleteAll();
+	}
+
 }

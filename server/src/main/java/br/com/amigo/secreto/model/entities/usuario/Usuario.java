@@ -17,6 +17,12 @@ public class Usuario extends DefaultEntity {
 	
 	private static final long serialVersionUID = 1L;
 	
+	public Usuario(String nome, String email) {
+		super();
+		this.nome = nome;
+		this.email = email;
+	}
+
 	@Column(nullable = false)
 	private String nome;
 	

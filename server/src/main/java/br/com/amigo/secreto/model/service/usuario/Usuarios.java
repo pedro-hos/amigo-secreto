@@ -10,4 +10,5 @@ public interface Usuarios {
 	Usuario comID(Long id);
 	Usuario comEmail(String email);
 	void remove(Long id);
+	void removeAll();
 }
