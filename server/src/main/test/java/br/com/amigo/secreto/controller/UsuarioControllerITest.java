@@ -1,11 +1,5 @@
 package br.com.amigo.secreto.controller;
 
-import static com.jayway.restassured.RestAssured.get;
-import static com.jayway.restassured.RestAssured.given;
-import static com.jayway.restassured.http.ContentType.JSON;
-import static org.hamcrest.Matchers.*;
-import static org.hamcrest.Matchers.*;
-
 import org.codehaus.jackson.map.ObjectMapper;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -22,8 +16,11 @@ import br.com.amigo.secreto.model.service.usuario.Usuarios;
  * Classe de teste de integração para os métodos REST do Usuário. 
  * Para rodar este teste necessário que o servidor esteja rodando,
  * para isso execute a classe: Application.java
+ * 
+ * http://www.petrikainulainen.net/programming/spring-framework/unit-testing-of-spring-mvc-controllers-rest-api/
+ * http://blog.zenika.com/index.php?post/2013/01/15/REST-Web-Services-testing-with-Spring-MVC
  *
- */
+ */	
 public class UsuarioControllerITest {
 	
 	private static final String USUARIO_CONTEXT = "http://localhost:8080/api/usuario";
