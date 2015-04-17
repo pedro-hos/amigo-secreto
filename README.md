@@ -1,6 +1,6 @@
 # amigo-secreto
 
-Sistema para sorteio de Amigo secreto, usando para backend:
+Sistema para sorteio de Amigo secreto, usando para BackEnd:
 
 * Java 7;
 * Hibernate, 
