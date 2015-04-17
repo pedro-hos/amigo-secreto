@@ -1,3 +1,16 @@
 # amigo-secreto
 
-Sistema para sorteio de amiguxo secreto, usando Java 8, Hibernate, Spring, Sprint boot (tomcat), Spring Data e Spring MVC para backend e AngularJS, grunt e bower
+Sistema para sorteio de Amigo secreto, usando para backend:
+
+* Java 7;
+* Hibernate, 
+* Spring, 
+* Sprint boot (tomcat), 
+* Spring Data e 
+* Spring MVC 
+
+Para o FrontEnd:
+
+* para backend;
+* AngularJS e
+* Bower
