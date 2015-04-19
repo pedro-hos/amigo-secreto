@@ -1,3 +1,14 @@
+	<script src = "public/jquery/dist/jquery.js"></script>
+    <script src = "public/angular/angular.js"></script>
+    <script src = "public/bootstrap/dist/js/bootstrap.js"></script>
+    <script src = "public/angular-resource/angular-resource.js"></script>
+    <script src = "public/angular-route/angular-route.js"></script>
+
+    <script src = "scripts/app.js"></script>
+    <script src = "scripts/controllers/main.js"></script>
+    <script src = "scripts/services/usuarioService.js"></script>
+    <script src = "scripts/controllers/usuario.js"></script>
+
 <!doctype html>
 <html>
   <head>
@@ -15,7 +26,6 @@
         <div class="container-fluid">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
@@ -24,8 +34,12 @@
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Home</a></li>
-              <li><a href="#/usuario/novo">Cadastrar Usuários</a></li>
+              <li>
+              	<a href="#/">Home {{teste}}</a>
+              </li>
+              <li>
+              	<a href="#/usuario/novo">Cadastrar Usuários</a>
+              </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
             	<li><li><a href="#">Sobre</a></li></li>
@@ -43,12 +57,5 @@
   </div>
 
   </body>
-	<script src = "public/jquery/dist/jquery.js"></script>
-    <script src = "public/angular/angular.js"></script>
-    <script src = "public/bootstrap/dist/js/bootstrap.js"></script>
-    <script src = "public/angular-resource/angular-resource.js"></script>
-    <script src = "public/angular-route/angular-route.js"></script>
-
-    <script src = "scripts/app.js"></script>
-    <script src = "scripts/controllers/main.js"></script>
+	
  <html>

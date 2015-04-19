@@ -2,14 +2,21 @@ angular
   .module('amigo-secreto', [ 'ngResource', 'ngRoute' ])
   .config(function ($routeProvider) {
     $routeProvider
+
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainController'
       })
+
+      .when('/usuario/novo', {
+        templateUrl: 'views/novoUsuario.html',
+        controller: 'UsuarioController'
+      })
+
       .otherwise({
         redirectTo: '/'
       });
 
   });
 
-  var $SERVICES_CONTEXT = "";
+  var $SERVICES_CONTEXT = "http://localhost:8080/api/";

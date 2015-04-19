@@ -53,7 +53,7 @@ public class UsuarioController {
 		return new ResponseEntity<Usuario>( usuario, OK );
 	}
 	
-	@RequestMapping( method = POST, 
+	@RequestMapping( method   = POST, 
 					 consumes = APPLICATION_JSON_VALUE, 
 					 produces = APPLICATION_JSON_VALUE )
 	public ResponseEntity<Usuario> create( @RequestBody Usuario usuario ) {

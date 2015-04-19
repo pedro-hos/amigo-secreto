@@ -11,6 +11,5 @@ Sistema para sorteio de Amigo secreto, usando para BackEnd:
 
 Para o FrontEnd:
 
-* para backend;
 * AngularJS e
 * Bower
