@@ -17,6 +17,11 @@ public class Usuario extends DefaultEntity {
 	
 	private static final long serialVersionUID = 1L;
 	
+	/**
+	 * @deprecated Apenas para uso do Spring MVC
+	 */
+	public Usuario() {}
+	
 	public Usuario(String nome, String email) {
 		super();
 		this.nome = nome;
