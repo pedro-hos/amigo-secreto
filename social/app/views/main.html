@@ -15,7 +15,7 @@
 
 		  	<a href="#/sorteio" class="btn btn-success" role="button" ng-disabled="usuarios.length < 2">
 		  		<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
-		  		Sortear
+		  		Realizar Sorteio
 		  	</a>
 
 	  	</div>
@@ -28,12 +28,12 @@
 
 	<hr>
 
-  	<div class="alert alert-{{mensagem.tipo}} alert-dismissible" role="alert" ng-show="mensagem.show">
-  		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-  			<span aria-hidden="true">&times;</span>
-  		</button>
-  		{{mensagem.texto}}
-	</div>
+	<div class="alert alert-{{mensagem.tipo}} alert-dismissible" role="alert" ng-show="mensagem.show">
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		</button>
+		{{mensagem.texto}}
+  </div>
 	
 
 	<br>
