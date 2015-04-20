@@ -62,6 +62,8 @@ Agora, só falta subir o fakeSMTP para brincar de enviar email. Acesse a pasta p
 java -jar fakeSMTP-1.13.jar
 ```
 
+Quando ele terminar de carregar, mude a porta para **2525**, é essa que esta cadastrada.
+
 **obs: Essa é a versão que estou rodando, se estiver com outra versão, só mudar o nome do jar**
 
 Pronto. O sistema esta de pé. Só ir cadastrando as pessoas. Colocando email e nome valido etc. O Sorteio só é relizado quando houver 2 ou mais pessoas no sorteio (dããã).
