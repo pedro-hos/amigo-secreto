@@ -1,6 +1,6 @@
 # amigo-secreto
 
-> Obs: Todos os testes foram feitos em uma máquina linux/mac. Acredito que não encontrará dificuldade se roda no outro sistema operacional!
+> Obs: Todos os testes foram feitos em uma máquina linux/mac. Acredito que não encontrará dificuldade se rodar no outro sistema operacional!
 
 Sistema para sorteio de Amigo secreto, usando para BackEnd:
 
