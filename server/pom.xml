@@ -5,9 +5,7 @@
 	<artifactId>amigo-secreto</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Amigo secreto</name>
-	<description>
-		Projeto de um sistema de sorteio de amigo secreto!
-	</description>
+	<description>Projeto de um sistema de sorteio de amigo secreto!</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -69,10 +67,15 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-tx</artifactId>
 		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+		</dependency>
+
 		<dependency>
 			<groupId>org.hsqldb</groupId>
 			<artifactId>hsqldb</artifactId>
-			<scope>runtime</scope>
 		</dependency>
 
 		<dependency>
@@ -83,8 +86,8 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
-			<version>4.3.8.Final</version>
 		</dependency>
+
 
 		<!-- json mapper -->
 
@@ -104,16 +107,10 @@
 			<version>2.4.0</version>
 		</dependency>
 
-		<!-- Depêndencias de Banco -->
 		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.35</version>
-		</dependency>
-		<dependency>
-			<groupId>com.mchange</groupId>
-			<artifactId>c3p0</artifactId>
-			<version>0.9.2.1</version>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4.1</version>
 		</dependency>
 
 		<!-- Dependências de Teste -->
@@ -126,7 +123,6 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.11</version>
 			<scope>test</scope>
 			<exclusions>
 				<exclusion>
@@ -138,19 +134,16 @@
 		<dependency>
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-core</artifactId>
-			<version>1.9.5</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
-			<version>3.2.3.RELEASE</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.jayway.jsonpath</groupId>
 			<artifactId>json-path</artifactId>
-			<version>0.8.1</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>

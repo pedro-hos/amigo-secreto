@@ -27,8 +27,20 @@ import br.com.amigo.secreto.model.service.usuario.Usuarios;
 @RequestMapping(value="api/usuario")
 public class UsuarioController {
 	
-	@Autowired Usuarios usuarios;
+
+	private Usuarios usuarios;
 	
+	@Autowired
+	public UsuarioController(Usuarios usuarios) {
+		super();
+		this.usuarios = usuarios;
+	}
+	
+	/**
+	 * @deprecated
+	 */
+	public UsuarioController() { }
+
 	@RequestMapping( method = GET, produces = APPLICATION_JSON_VALUE )
 	public ResponseEntity<List<Usuario>> getAll() {
 		

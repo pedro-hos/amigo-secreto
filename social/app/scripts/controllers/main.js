@@ -11,6 +11,10 @@ angular.module('amigo-secreto')
         	$rootScope.mensagem = {texto: "Usuário Editado com Sucesso", show:true, tipo:"success"};
     	});
 
+    	$rootScope.$on('emailEnviado', function() {
+        	$rootScope.mensagem = {texto: "Email Enviado com Sucesso", show:true, tipo:"success"};
+    	});
+
 		function buscaUsuarios() {
 			usuarioService.query(
 				

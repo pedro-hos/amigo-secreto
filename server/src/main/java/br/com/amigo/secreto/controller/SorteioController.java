@@ -1,5 +1,6 @@
 package br.com.amigo.secreto.controller;
 
+import static org.springframework.http.HttpStatus.BAD_REQUEST;
 import static org.springframework.http.HttpStatus.NOT_FOUND;
 import static org.springframework.http.HttpStatus.OK;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
@@ -21,8 +22,19 @@ import br.com.amigo.secreto.model.service.usuario.Usuarios;
 @RequestMapping(value="api/sorteio")
 public class SorteioController {
 	
-	@Autowired Usuarios usuarios;
+	private Usuarios usuarios;
 	
+	/**
+	 * @deprecated
+	 */
+	public SorteioController() {}
+
+	@Autowired
+	public SorteioController(Usuarios usuarios) {
+		super();
+		this.usuarios = usuarios;
+	}
+
 	@RequestMapping( method = GET, produces = APPLICATION_JSON_VALUE )
 	public ResponseEntity<List<Usuario>> sortear() {
 		
@@ -30,6 +42,8 @@ public class SorteioController {
 		
 		if( todos.isEmpty() ) {
 			return new ResponseEntity<List<Usuario>>(NOT_FOUND);
+		} else if (todos.size() < 2) {
+			return new ResponseEntity<List<Usuario>>(BAD_REQUEST);
 		}
 		
 		sortearAmigos(todos);
