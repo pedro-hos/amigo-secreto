@@ -19,7 +19,7 @@ Para o FrontEnd:
 # Como executar?
 
 * Será necessário ter o java 7 instalado;
-* Python 2.7 instalado (foi a versão que usei) para poder rodar o servidorzinho angular;
+* Python 2.7 instalado (foi a versão que usei) para poder rodar o servidorzinho python par ao angular;
 * Ter baixado na sua máquina o fonte: https://github.com/pedro-hos/amigo-secreto.git
 * Ter feito o download do FakeSMTP: https://nilhcem.github.io/FakeSMTP/index.html
 
