@@ -10,10 +10,10 @@ import org.springframework.data.web.config.EnableSpringDataWebSupport;
 @EnableAutoConfiguration
 @EnableSpringDataWebSupport
 @ComponentScan
-public class Application {
+public class SpringBootRun {
 
 	public static void main(String[] args) throws Exception {
-		SpringApplication.run(Application.class, args);
+		SpringApplication.run(SpringBootRun.class, args);
 	}
 
 }
