@@ -1,9 +1,14 @@
 package br.com.amigo.secreto.model.entities.usuario;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
+import javax.persistence.Transient;
 
 import br.com.amigo.secreto.model.entities.DefaultEntity;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * 
@@ -33,6 +38,13 @@ public class Usuario extends DefaultEntity {
 	
 	@Column(nullable = false, unique = true)
 	private String email;
+	
+	@JsonIgnore
+	@OneToOne(cascade = { CascadeType.MERGE, CascadeType.PERSIST })
+	private Usuario amigoSecreto;
+	
+	@Transient
+	private String nomeAmigoSecreto;
 
 	public String getNome() {
 		return nome;
@@ -48,6 +60,22 @@ public class Usuario extends DefaultEntity {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public Usuario getAmigoSecreto() {
+		return amigoSecreto;
+	}
+
+	public void setAmigoSecreto(Usuario amigoSecreto) {
+		this.amigoSecreto = amigoSecreto;
+	}
+
+	public String getNomeAmigoSecreto() {
+		return nomeAmigoSecreto = amigoSecreto == null ? null : amigoSecreto.getNome();
+	}
+
+	public void setNomeAmigoSecreto(String nomeAmigoSecreto) {
+		this.nomeAmigoSecreto = nomeAmigoSecreto;
 	}
 
 }

@@ -18,6 +18,11 @@ angular
         controller: 'UsuarioController'
       })
 
+      .when('/sorteio', {
+        templateUrl: 'views/sorteio.html',
+        controller: 'SorteioController'
+      })
+
       .otherwise({
         redirectTo: '/'
       });

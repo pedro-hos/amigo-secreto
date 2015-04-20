@@ -43,4 +43,14 @@ public class UsuariosImpl implements Usuarios {
 		usuarioRepository.deleteAll();
 	}
 
+	@Override
+	public void salveAll(List<Usuario> usuarios) {
+		usuarioRepository.save(usuarios);
+	}
+
+	@Override
+	public Usuario findByAmigoSecretoId(Long id) {
+		return usuarioRepository.findByAmigoSecretoId(id);
+	}
+
 }

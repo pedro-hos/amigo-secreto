@@ -9,6 +9,9 @@ public interface Usuarios {
 	Usuario novo(Usuario usuario);
 	Usuario comID(Long id);
 	Usuario comEmail(String email);
+	Usuario findByAmigoSecretoId(Long id);
 	void remove(Long id);
 	void removeAll();
+	void salveAll(List<Usuario> usuarios);
+	
 }

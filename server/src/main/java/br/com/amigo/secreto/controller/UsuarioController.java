@@ -95,8 +95,17 @@ public class UsuarioController {
 	@RequestMapping( value = "/{id}", method = DELETE, produces = APPLICATION_JSON_VALUE )
 	public ResponseEntity<Usuario> delete( @PathVariable("id") Long id ) {
 		
-		if(usuarios.comID(id) == null) {
+		Usuario usuario = usuarios.comID(id);
+		
+		if(usuario == null) {
 			return new ResponseEntity<Usuario>(NOT_FOUND);
+		}
+		
+		Usuario meuAmigoSecreto = usuarios.findByAmigoSecretoId(usuario.getId());
+		
+		if(meuAmigoSecreto != null) {
+			meuAmigoSecreto.setAmigoSecreto(null);
+			usuarios.novo(meuAmigoSecreto);
 		}
 		
 		usuarios.remove(id);
