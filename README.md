@@ -13,6 +13,9 @@ Sistema para sorteio de Amigo secreto, usando para BackEnd:
 
 Para o FrontEnd:
 
+* Bootstrap;
+* HTML5
+* CSS3
 * AngularJS e
 * Bower
 
