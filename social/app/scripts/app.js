@@ -8,7 +8,12 @@ angular
         controller: 'MainController'
       })
 
-      .when('/usuario/novo', {
+      .when('/usuario', {
+        templateUrl: 'views/novoUsuario.html',
+        controller: 'UsuarioController'
+      })
+
+      .when('/usuario/:id', {
         templateUrl: 'views/novoUsuario.html',
         controller: 'UsuarioController'
       })

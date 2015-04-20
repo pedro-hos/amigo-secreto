@@ -71,19 +71,26 @@ public class UsuarioController {
 	public ResponseEntity<Usuario> update( @PathVariable("id") Long id,
 										   @RequestBody Usuario usuario ) {
 	
+		Usuario usuarioNoBanco = usuarios.comID(id);
+		
 		if(!usuario.getId().equals(id)) {
 			return new ResponseEntity<Usuario>(BAD_REQUEST);
+		} else {
 			
-		} else if(usuarios.comID(id) == null) {
-			return new ResponseEntity<Usuario>(NOT_FOUND);
-			
-		} else if(usuarios.comEmail(usuario.getEmail()) != null) {
-			return new ResponseEntity<Usuario>(CONFLICT);
-			
+			if(usuarioNoBanco == null) {
+				return new ResponseEntity<Usuario>(NOT_FOUND);
+				
+			} else if( alterouEmail(usuario, usuarioNoBanco) ) {
+				
+				if (usuarios.comEmail(usuario.getEmail()) != null) {
+					return new ResponseEntity<Usuario>(CONFLICT);
+				}
+			}
 		}
 		
 		return new ResponseEntity<Usuario>(usuarios.novo(usuario), OK);
 	}
+
 	
 	@RequestMapping( value = "/{id}", method = DELETE, produces = APPLICATION_JSON_VALUE )
 	public ResponseEntity<Usuario> delete( @PathVariable("id") Long id ) {
@@ -94,6 +101,10 @@ public class UsuarioController {
 		
 		usuarios.remove(id);
 		return new ResponseEntity<Usuario>(OK);
+	}
+	
+	protected boolean alterouEmail(Usuario usuario, Usuario usuarioNoBanco) {
+		return !usuario.getEmail().equals(usuarioNoBanco.getEmail());
 	}
 	
 }

@@ -5,7 +5,15 @@
   <div class="panel-body">
     <div class="row">
       <div class="col-md-4"></div>
+
+
       <div class="col-md-4">
+
+        <div class="alert alert-danger {{hide}}" role="alert" >
+          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+          {{mensagem.texto}}
+        </div>
+
         <form name="mainForm" class="form-horizontal" ng-submit="salvar()">
           <div class="form-group">
             <label for="_nome" class="col-sm-2 control-label">Nome</label>
@@ -16,7 +24,7 @@
           <div class="form-group">
             <label for="_email" class="col-sm-2 control-label">Email</label>
             <div class="col-sm-10">
-              <input id="_email" type="email" class="form-control" ng-model="usuario.email" placeholder="Email" required>
+              <input id="_email" type="email" class="form-control" ng-model="usuario.email" placeholder="email@exemplo.com" required>
             </div>
           </div>
          
