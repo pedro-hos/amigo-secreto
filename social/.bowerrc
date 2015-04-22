@@ -1,4 +1,3 @@
 {
-  "directory": "app/public/vendor",
-  "proxy":"http://proxy.gsw.com.br:3128"
+  "directory": "app/public"
 }
