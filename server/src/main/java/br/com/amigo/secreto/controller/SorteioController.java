@@ -47,7 +47,7 @@ public class SorteioController {
 		sortearAmigos(todos);
 		
 		//Vamos armezenar quem tirou quem! \o
-		usuarios.salveAll(todos);
+		usuarios.salvarTodos(todos);
 		
 		return new ResponseEntity<List<Usuario>>( todos, OK );
 	}
@@ -105,8 +105,6 @@ public class SorteioController {
 	protected int retornaIndice( int indiceUsuarioNaLista, 
 								 int maxParaSorteio, 
 								 List<Integer> jaSorteados ) {
-		
-		System.out.println("Teste");
 		
 		Random random = new Random();
 		int indice = random.nextInt(maxParaSorteio);

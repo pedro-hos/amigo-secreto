@@ -1,5 +1,6 @@
 package br.com.amigo.secreto.model.service.usuario;
 
+import java.util.Collection;
 import java.util.List;
 
 import br.com.amigo.secreto.model.entities.usuario.Usuario;
@@ -12,6 +13,6 @@ public interface Usuarios {
 	Usuario findByAmigoSecretoId(Long id);
 	void remove(Long id);
 	void removeAll();
-	void salveAll(List<Usuario> usuarios);
+	List<Usuario> salvarTodos(Collection<Usuario> usuarios);
 	
 }

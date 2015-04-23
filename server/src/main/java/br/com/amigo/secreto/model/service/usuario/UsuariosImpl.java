@@ -1,5 +1,6 @@
 package br.com.amigo.secreto.model.service.usuario;
 
+import java.util.Collection;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +12,13 @@ import br.com.amigo.secreto.model.repositories.usuario.UsuarioRepository;
 @Service(value="UsuariosImpl")
 public class UsuariosImpl implements Usuarios {
 
-	@Autowired private UsuarioRepository usuarioRepository;
+	private UsuarioRepository usuarioRepository;
 	
+	@Autowired
+	public UsuariosImpl(UsuarioRepository usuarioRepository) {
+		this.usuarioRepository = usuarioRepository;
+	}
+
 	@Override
 	public List<Usuario> todos() {
 		return (List<Usuario>) usuarioRepository.findAll();
@@ -44,8 +50,8 @@ public class UsuariosImpl implements Usuarios {
 	}
 
 	@Override
-	public void salveAll(List<Usuario> usuarios) {
-		usuarioRepository.save(usuarios);
+	public List<Usuario> salvarTodos(Collection<Usuario> usuarios) {
+		return (List<Usuario>) usuarioRepository.save(usuarios);
 	}
 
 	@Override
