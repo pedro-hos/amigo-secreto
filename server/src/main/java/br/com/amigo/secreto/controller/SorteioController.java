@@ -24,9 +24,7 @@ public class SorteioController {
 	
 	private Usuarios usuarios;
 	
-	/**
-	 * @deprecated
-	 */
+	
 	public SorteioController() {}
 
 	@Autowired
@@ -72,8 +70,24 @@ public class SorteioController {
 			 * na lista auxiliar.
 			 */
 			if(jaSorteados.size() == todos.size() - 1) {
-				usuario.setAmigoSecreto(auxiliar.get(0));
+				
+				Usuario usuarioAuxiliar = auxiliar.get(0);
+				
+				if(usuario.equals(usuarioAuxiliar)) {
+					Random random = new Random();
+					
+					//Pego todos e sorteio um, menos ele mesmo para trocar os amigos.
+					Usuario usuarioSorteado = todos.get(random.nextInt(todos.size() - 1));
+					
+					usuario.setAmigoSecreto(usuarioSorteado.getAmigoSecreto());
+					usuarioSorteado.setAmigoSecreto(usuarioAuxiliar);
+	
+					continue;
+				}
+				
+				usuario.setAmigoSecreto(usuarioAuxiliar);
 				continue;
+				
 			}
 			
 			indice = retornaIndice(todos.indexOf(usuario), todos.size(), jaSorteados);
@@ -91,6 +105,8 @@ public class SorteioController {
 	protected int retornaIndice( int indiceUsuarioNaLista, 
 								 int maxParaSorteio, 
 								 List<Integer> jaSorteados ) {
+		
+		System.out.println("Teste");
 		
 		Random random = new Random();
 		int indice = random.nextInt(maxParaSorteio);

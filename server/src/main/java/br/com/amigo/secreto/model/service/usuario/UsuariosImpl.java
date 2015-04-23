@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import br.com.amigo.secreto.model.entities.usuario.Usuario;
 import br.com.amigo.secreto.model.repositories.usuario.UsuarioRepository;
 
-@Service
+@Service(value="UsuariosImpl")
 public class UsuariosImpl implements Usuarios {
 
 	@Autowired private UsuarioRepository usuarioRepository;

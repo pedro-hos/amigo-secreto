@@ -22,9 +22,6 @@ public class Usuario extends DefaultEntity {
 	
 	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * @deprecated Apenas para uso do Spring MVC
-	 */
 	public Usuario() {}
 	
 	public Usuario(String nome, String email) {
@@ -45,6 +42,10 @@ public class Usuario extends DefaultEntity {
 	
 	@Transient
 	private String nomeAmigoSecreto;
+	
+	public static UsuarioBuilder novo() {
+		return new UsuarioBuilder();
+	}
 
 	public String getNome() {
 		return nome;
