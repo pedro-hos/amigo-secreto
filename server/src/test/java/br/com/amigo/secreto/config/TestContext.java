@@ -8,10 +8,10 @@ import br.com.amigo.secreto.model.service.usuario.Usuarios;
 
 @Configuration
 public class TestContext {
-	
+
 	@Bean
-    public Usuarios todoService() {
-        return Mockito.mock(Usuarios.class);
-    }
+	public Usuarios todoService() {
+		return Mockito.mock(Usuarios.class);
+	}
 
 }

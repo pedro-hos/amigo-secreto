@@ -14,5 +14,4 @@ public interface Usuarios {
 	void remove(Long id);
 	void removeAll();
 	List<Usuario> salvarTodos(Collection<Usuario> usuarios);
-	
 }
