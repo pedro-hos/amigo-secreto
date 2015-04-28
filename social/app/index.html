@@ -1,61 +1,66 @@
-	<script src = "public/jquery/dist/jquery.js"></script>
-    <script src = "public/angular/angular.js"></script>
-    <script src = "public/bootstrap/dist/js/bootstrap.js"></script>
-    <script src = "public/angular-resource/angular-resource.js"></script>
-    <script src = "public/angular-route/angular-route.js"></script>
+<script src="public/jquery/dist/jquery.js"></script>
+<script src="public/angular/angular.js"></script>
+<script src="public/bootstrap/dist/js/bootstrap.js"></script>
+<script src="public/angular-resource/angular-resource.js"></script>
+<script src="public/angular-route/angular-route.js"></script>
 
-    <script src = "scripts/app.js"></script>
-    <script src = "scripts/controllers/main.js"></script>
-    <script src = "scripts/services/usuarioService.js"></script>
-    <script src = "scripts/controllers/usuario.js"></script>
-    <script src = "scripts/controllers/sorteio.js"></script>
-    <script src = "scripts/services/sorteioService.js"></script>
-    <script src = "scripts/services/emailService.js"></script>
+<script src="scripts/app.js"></script>
+<script src="scripts/controllers/main.js"></script>
+<script src="scripts/services/usuarioService.js"></script>
+<script src="scripts/controllers/usuario.js"></script>
+<script src="scripts/controllers/sorteio.js"></script>
+<script src="scripts/services/sorteioService.js"></script>
+<script src="scripts/services/emailService.js"></script>
 
 <!doctype html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="public/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="styles/style.css" />
-  </head>
-  <body ng-app="amigo-secreto">
-  <div class="container">
+    <link rel="stylesheet" href="public/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="styles/style.css"/>
+</head>
+<body ng-app="amigo-secreto">
+<div class="container">
 
-  	<nav class="navbar navbar-default">
+    <nav class="navbar navbar-default">
         <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#/">Amigo Secreto</a>
-          </div>
-          <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-              <li class="active">
-              	<a href="#/">Home</a>
-              </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-            	<li><li><a href="#">Sobre</a></li></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div><!--/.container-fluid -->
-      </nav>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="false" aria-controls="navbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#/">Amigo Secreto</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="#/">Home</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                    <li><a href="#">Sobre</a></li>
+                    </li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+        <!--/.container-fluid -->
+    </nav>
 
-  	<div ng-view="">
+    <div ng-view="">
 
-  		<!-- Aqui vai o código das views-->
+        <!-- Aqui vai o código das views-->
 
-  	</div>
+    </div>
 
-  </div>
+</div>
 
-  </body>
-	
- <html>
+</body>
+
+<html>

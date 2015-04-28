@@ -1,83 +1,82 @@
 angular.module('amigo-secreto')
-	.controller('UsuarioController', function ($scope, $location, $rootScope, $routeParams, usuarioService) {
+    .controller('UsuarioController', function ($scope, $location, $rootScope, $routeParams, usuarioService) {
 
-		$scope.hide = "hide";
+        $scope.hide = "hide";
 
-		if($routeParams.id) {
-			console.log('Vamos editar o usuario: ' + $routeParams.id);
-			usuarioService.get( { params: $routeParams.id },
-								function(usuario) {
-									$scope.usuario = usuario;
-								},
+        if ($routeParams.id) {
+            console.log('Vamos editar o usuario: ' + $routeParams.id);
+            usuarioService.get({params: $routeParams.id},
+                function (usuario) {
+                    $scope.usuario = usuario;
+                },
 
-								function(erro) {
-									console.log(erro);
-									
-									if(erro.status == 404) {
-										$scope.hide = "";
-										$scope.mensagem = {texto: "Usuário não encontrado!"};
-									}
-									
-								}
-			);
-		} else {
-			console.log('Cadastrando novo');
-			$scope.usuario = new usuarioService();
-		}
+                function (erro) {
+                    console.log(erro);
 
-		$scope.salvar = function() {
-			$scope.usuario.id > 0 ? $scope.atualizar() : $scope.novo();
-		};
+                    if (erro.status == 404) {
+                        $scope.hide = "";
+                        $scope.mensagem = {texto: "Usuário não encontrado!"};
+                    }
 
-		$scope.novo = function() {
-			console.log($scope.usuario);
+                }
+            );
+        } else {
+            console.log('Cadastrando novo');
+            $scope.usuario = new usuarioService();
+        }
 
-			$scope.usuario.$save()
-				.then(function(){
+        $scope.salvar = function () {
+            $scope.usuario.id > 0 ? $scope.atualizar() : $scope.novo();
+        };
 
-					$scope.usuario = new usuarioService();
-					$rootScope.$broadcast('contatoSalvo');
-					$location.path("#/");
+        $scope.novo = function () {
+            console.log($scope.usuario);
 
-				}).catch(function(erro) {
+            $scope.usuario.$save()
+                .then(function () {
 
-					console.log(erro);
+                    $scope.usuario = new usuarioService();
+                    $rootScope.$broadcast('contatoSalvo');
+                    $location.path("#/");
 
-					if(erro.status == 409) {
-						$scope.hide = "";
-						$scope.mensagem = {texto: "Usuário já cadastrado."};
-					}
-				});
-		};
+                }).catch(function (erro) {
 
-		$scope.atualizar = function() {
+                    console.log(erro);
 
-			$scope.usuario.$update(
+                    if (erro.status == 409) {
+                        $scope.hide = "";
+                        $scope.mensagem = {texto: "Usuário já cadastrado."};
+                    }
+                });
+        };
 
-				{ params: $scope.usuario.id },
+        $scope.atualizar = function () {
 
-				function(){
-					$scope.usuario = new usuarioService();
-					$rootScope.$broadcast('contatoEditado');
-					$location.path("#/");
-				}, 
+            $scope.usuario.$update(
+                {params: $scope.usuario.id},
 
-				function(erro) {
+                function () {
+                    $scope.usuario = new usuarioService();
+                    $rootScope.$broadcast('contatoEditado');
+                    $location.path("#/");
+                },
 
-					$scope.hide = "";
+                function (erro) {
 
-					if (erro.status == 409) {
-						$scope.mensagem = {texto: "Usuário já cadastrado."};
-					} else if (erro.status == 400) {
-						$scope.mensagem = {texto: "Usuários para edição não conferem"};
-					} else if (erro.status == 404) {
-						$scope.mensagem = {texto: "Usuário não encontrado."};
-					} else {
-						$scope.mensagem = {texto: "Tenho vergonha de dizer isso, mas acho que é um erro 500 =("};
-					}
+                    $scope.hide = "";
 
-				}
-			);
-		}
+                    if (erro.status == 409) {
+                        $scope.mensagem = {texto: "Usuário já cadastrado."};
+                    } else if (erro.status == 400) {
+                        $scope.mensagem = {texto: "Usuários para edição não conferem"};
+                    } else if (erro.status == 404) {
+                        $scope.mensagem = {texto: "Usuário não encontrado."};
+                    } else {
+                        $scope.mensagem = {texto: "Tenho vergonha de dizer isso, mas acho que é um erro 500 =("};
+                    }
 
-	});
+                }
+            );
+        }
+
+    });

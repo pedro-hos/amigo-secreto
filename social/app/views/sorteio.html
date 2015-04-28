@@ -1,44 +1,45 @@
 <div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title"> Sorteio Amigo Secreto </h3>
-  </div>
-  <div class="panel-body">
-    
-    <a ng-click="enviarEmail()" class="btn btn-primary" role="button">
-    	<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-    	Enviar email
-    </a>
-
-    <hr>
-
-    <div class="alert alert-{{mensagem.tipo}} {{hide}}" role="alert" >
-      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-      {{mensagem.texto}}
+    <div class="panel-heading">
+        <h3 class="panel-title"> Sorteio Amigo Secreto </h3>
     </div>
+    <div class="panel-body">
 
-	<div class="row">
-	  <div class="col-md-8">
-	  	<table class="table table-hover">
-	  		<caption>
-	  			Abaixo lista de quem tirou quem na parada. Se quiser mandar por <strong>E-mail</strong> quem tirou quem, 
-	  			só clicar no botão ali em cima
-	  		</caption>
-	  	     <thead>
-	  	       <tr>
-	  	         <th>Nome</th>
-	  	         <th>Nome do Amigo Secreto</th>
-	  	       </tr>
-	  	     </thead>
-	  	     <tbody>
-	  	       <tr ng-repeat="usuario in usuarios">
-	  	         <td>{{usuario.nome}}</td>
-	  	         <td>{{usuario.nomeAmigoSecreto}}</td>
-	  	       </tr>
-	  	     </tbody>
-	  	   </table>
-	  </div>
-	  <div class="col-md-4"></div>
-	</div>
+        <a ng-click="enviarEmail()" class="btn btn-primary" role="button">
+            <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+            Enviar email
+        </a>
 
-	</div>
+        <hr>
+
+        <div class="alert alert-{{mensagem.tipo}} {{hide}}" role="alert">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            {{mensagem.texto}}
+        </div>
+
+        <div class="row">
+            <div class="col-md-8">
+                <table class="table table-hover">
+                    <caption>
+                        Abaixo lista de quem tirou quem na parada. Se quiser mandar por <strong>E-mail</strong> quem
+                        tirou quem,
+                        só clicar no botão ali em cima
+                    </caption>
+                    <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Nome do Amigo Secreto</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="usuario in usuarios">
+                        <td>{{usuario.nome}}</td>
+                        <td>{{usuario.nomeAmigoSecreto}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+
+    </div>
 </div>

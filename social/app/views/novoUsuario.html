@@ -1,44 +1,48 @@
 <div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">Novo Usuário</h3>
-  </div>
-  <div class="panel-body">
-    <div class="row">
-      <div class="col-md-4"></div>
-
-
-      <div class="col-md-4">
-
-        <div class="alert alert-danger {{hide}}" role="alert" >
-          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-          {{mensagem.texto}}
-        </div>
-
-        <form name="mainForm" class="form-horizontal" ng-submit="salvar()">
-          <div class="form-group">
-            <label for="_nome" class="col-sm-2 control-label">Nome</label>
-            <div class="col-sm-10">
-              <input id="_nome" type="text" class="form-control" ng-model="usuario.nome" placeholder="Nome" required>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="_email" class="col-sm-2 control-label">Email</label>
-            <div class="col-sm-10">
-              <input id="_email" type="email" class="form-control" ng-model="usuario.email" placeholder="email@exemplo.com" required>
-            </div>
-          </div>
-         
-          <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-              <button type="submit" class="btn btn-success" ng-disabled="mainForm.$invalid">
-                <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>
-                Cadastrar
-              </button>
-            </div>
-          </div>
-        </form>
-      </div>
-      <div class="col-md-4"></div>
+    <div class="panel-heading">
+        <h3 class="panel-title">Novo Usuário</h3>
     </div>
-  </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-4"></div>
+
+
+            <div class="col-md-4">
+
+                <div class="alert alert-danger {{hide}}" role="alert">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    {{mensagem.texto}}
+                </div>
+
+                <form name="mainForm" class="form-horizontal" ng-submit="salvar()">
+                    <div class="form-group">
+                        <label for="_nome" class="col-sm-2 control-label">Nome</label>
+
+                        <div class="col-sm-10">
+                            <input id="_nome" type="text" class="form-control" ng-model="usuario.nome"
+                                   placeholder="Nome" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="_email" class="col-sm-2 control-label">Email</label>
+
+                        <div class="col-sm-10">
+                            <input id="_email" type="email" class="form-control" ng-model="usuario.email"
+                                   placeholder="email@exemplo.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-success" ng-disabled="mainForm.$invalid">
+                                <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>
+                                Cadastrar
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
 </div>
